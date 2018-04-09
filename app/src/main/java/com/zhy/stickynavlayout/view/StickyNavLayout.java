@@ -130,22 +130,7 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
         layoutParams.height = getMeasuredHeight() - getTopActionViewHeight();
         mRecyclerView.setLayoutParams(layoutParams);
 
-        mStickyViewHelper = new StickyViewHelper(this);
-
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.for_more_search_result_item, null);
-
-        int w = View.MeasureSpec.makeMeasureSpec(0,
-                View.MeasureSpec.UNSPECIFIED);
-        int h = View.MeasureSpec.makeMeasureSpec(0,
-                View.MeasureSpec.UNSPECIFIED);
-        view.measure(w, h);
-        int height = view.getMeasuredHeight();
-
-        Log.d("StickyNavLayout", "view height:" + height
-                + " getMeasuredHeight() " + getMeasuredHeight()
-                + " mTop.getMeasuredHeight() " + mTop.getMeasuredHeight()
-                + " gmTopViewHeight " + mTopViewHeight);
-
+        mStickyViewHelper =  StickyViewHelper.getInstance(this);
     }
 
     private int[] mRecyclerViewLocation = new int[2];

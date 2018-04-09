@@ -48,16 +48,24 @@ public class StickyViewHelper {
     private static int SPEED = 4000;
 
 
+    private static StickyViewHelper instance;
 
-    public StickyViewHelper(StickyNavLayout stickyNavLayout){
-        Log.d("StickyNavLayout", "StickyViewHelper create");
+    public static StickyViewHelper getInstance(StickyNavLayout stickyNavLayout) {
+        if (instance == null) {
+            instance = new StickyViewHelper(stickyNavLayout);
+        }
+        return instance;
+    }
+
+    private StickyViewHelper(StickyNavLayout stickyNavLayout){
+        Log.d("StickyViewHelper", "StickyViewHelper create");
 
         mStickyNavLayout = stickyNavLayout;
         mOverScroller = mStickyNavLayout.getScroller();
         mRecyclerView = mStickyNavLayout.getRecyclerView();
         mTopViewHeight = mStickyNavLayout.getTopViewHeight();
         srcollThreshold = getScrollHeight()/10;
-        mLastScrollState = getScrollHeight() + getTopActionViewHeight();
+        mLastScrollState = getScrollHeight() ;
         initScrollLocation();
 
 
@@ -79,7 +87,8 @@ public class StickyViewHelper {
     private void initScrollLocation(){
         RECYCLER_VIEW_SCROLL_LOCATION_TOP = 0;
         RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE = getScrollHeight()/2;
-        RECYCLER_VIEW_SCROLL_LOCATION_BOTTOM = getScrollHeight() + getTopActionViewHeight();
+        RECYCLER_VIEW_SCROLL_LOCATION_BOTTOM = getScrollHeight() ;
+        Log.d("StickyViewHelper", "RECYCLER_VIEW_SCROLL_LOCATION_BOTTOM:" + RECYCLER_VIEW_SCROLL_LOCATION_BOTTOM);
     }
 
     private int getRecyclerViewY(){

@@ -39,6 +39,7 @@ public class MainActivity extends FragmentActivity {
     private void initViews() {
         mRecyclerView = (RecyclerView)findViewById(R.id.id_stickynavlayout_innerscrollview);
         mStickyNavLayout = (StickyNavLayout) findViewById(R.id.sticky_layout);
+        mStickyNavLayout.setTopActionViewHeight(200);
     }
 
     private void initDatas() {
