@@ -2,7 +2,10 @@ package com.zhy.stickynavlayout.view;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.ViewTreeObserver;
 import android.widget.OverScroller;
+
+import com.zhy.stickynavlayout.R;
 
 /**
  * Created by yangsimin on 2018/4/6.
@@ -31,17 +34,52 @@ public class StickyViewHelper {
     private int mLastScrollState;
 
     /**
+     * recyclerView 滑动停下的三个位置
+     */
+    private int RECYCLER_VIEW_SCROLL_LOCATION_TOP;
+
+    private int RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE;
+
+    private int RECYCLER_VIEW_SCROLL_LOCATION_BOTTOM;
+
+    /**
      * 回弹速度
      */
     private static int SPEED = 4000;
 
+
+
     public StickyViewHelper(StickyNavLayout stickyNavLayout){
+        Log.d("StickyNavLayout", "StickyViewHelper create");
+
         mStickyNavLayout = stickyNavLayout;
         mOverScroller = mStickyNavLayout.getScroller();
         mRecyclerView = mStickyNavLayout.getRecyclerView();
         mTopViewHeight = mStickyNavLayout.getTopViewHeight();
         srcollThreshold = getScrollHeight()/10;
         mLastScrollState = getScrollHeight() + getTopActionViewHeight();
+        initScrollLocation();
+
+
+        mStickyNavLayout.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+            @Override
+            public void onScrollChanged() {
+                //因为Scroll的fling方法没有滑动结束的回调，所以只能的在滚动的回调里记录滑动停下的位置
+                int location = getRecyclerViewY() - getLayoutY();
+                Log.d("StickyViewHelper", "OnScrollChangedListener getRecyclerViewY():" + (getRecyclerViewY() - getLayoutY()));
+                if(location == RECYCLER_VIEW_SCROLL_LOCATION_TOP
+                        || location == RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE
+                        || location == RECYCLER_VIEW_SCROLL_LOCATION_BOTTOM){
+                    mLastScrollState = location;
+                }
+            }
+        });
+    }
+
+    private void initScrollLocation(){
+        RECYCLER_VIEW_SCROLL_LOCATION_TOP = 0;
+        RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE = getScrollHeight()/2;
+        RECYCLER_VIEW_SCROLL_LOCATION_BOTTOM = getScrollHeight() + getTopActionViewHeight();
     }
 
     private int getRecyclerViewY(){
@@ -78,23 +116,8 @@ public class StickyViewHelper {
         int minY = getMinY();
         int maxY = getMaxY();
         startFlingAnimation(direction, minY, maxY);
-        setLastScrollState(direction, minY, maxY);
     }
 
-    /**
-     * 设置滑块view停留的位置
-     * @param direction
-     * @param minY
-     * @param maxY
-     */
-    private void setLastScrollState(int direction, int minY, int maxY){
-        if(direction > 0){
-            mLastScrollState = minY;
-        }else {
-            mLastScrollState = maxY;
-        }
-        Log.d("StickyViewHelper", "mLastScrollState:" + mLastScrollState);
-    }
 
     private int getLastScrollState(){
         return mLastScrollState;
@@ -144,7 +167,14 @@ public class StickyViewHelper {
     private int getDirectionFromLocation(int direction){
         //滑动速度大于一定值时，不用判断滑动距离是否大于阀值，直接返回方向
         if(Math.abs(mStickyNavLayout.mFlingSpeed) > 500){
-//            mStickyNavLayout.mFlingSpeed = 0;
+            //滑动的距离如果小于阀值，则方向返回速度的方向，增加这个判断，防止抖动
+            if(Math.abs(getLastScrollState() - getRecyclerViewY()) < srcollThreshold){
+                if(mStickyNavLayout.mFlingSpeed > 0){
+                    return 1;
+                }else {
+                    return -1;
+                }
+            }
             return direction;
         }
         if(Math.abs(getLastScrollState() - getRecyclerViewY())> srcollThreshold){
@@ -159,8 +189,8 @@ public class StickyViewHelper {
      * @return
      */
     private int getMinY(){
-        if(getRecyclerViewY() > getScrollHeight()/2){
-            return getScrollHeight()/2;
+        if(getRecyclerViewY() > RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE){
+            return RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE;
         }else {
             return 0;
         }
@@ -171,10 +201,10 @@ public class StickyViewHelper {
      * @return
      */
     private int getMaxY(){
-        if (getRecyclerViewY() > getScrollHeight()/2){
-            return getScrollHeight() + getTopActionViewHeight();
+        if (getRecyclerViewY() > RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE){
+            return RECYCLER_VIEW_SCROLL_LOCATION_BOTTOM;
         }else {
-            return getScrollHeight()/2;
+            return RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE;
         }
     }
 
@@ -186,10 +216,13 @@ public class StickyViewHelper {
         mStickyNavLayout.invalidate();
     }
 
+    /**
+     * 直接从起始位置滑动到中间位置
+     */
     public void startUpScrollAnimation(){
         mOverScroller.fling(0, getScrollY(),
                 0, SPEED, 0, 0,
-                0, getScrollHeight()/2);
+                0, RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE);
         mStickyNavLayout.invalidate();
     }
 }
