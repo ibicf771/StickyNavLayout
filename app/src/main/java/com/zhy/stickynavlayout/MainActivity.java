@@ -2,25 +2,15 @@ package com.zhy.stickynavlayout;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.Button;
-import android.widget.TextView;
 
-import com.zhy.base.adapter.ViewHolder;
-import com.zhy.base.adapter.recyclerview.CommonAdapter;
-import com.zhy.stickynavlayout.view.HeaderAndFooterWrapper;
-import com.zhy.stickynavlayout.view.LoadMoreWrapper;
+import com.zhy.stickynavlayout.adapter.BaseAdapter;
+import com.zhy.stickynavlayout.adapter.HeaderAndFooterWrapper;
+import com.zhy.stickynavlayout.adapter.LoadMoreWrapper;
 import com.zhy.stickynavlayout.view.StickyNavLayout;
 
 import java.util.ArrayList;
@@ -53,11 +43,11 @@ public class MainActivity extends FragmentActivity {
         for (int i = 0; i < 20; i++) {
             mDatas.add("简介k" + " -> " + i);
         }
-        TasksAdapter tasksAdapter = new TasksAdapter(mDatas);
+        BaseAdapter baseAdapter = new BaseAdapter(mDatas);
 //        mRecyclerView.setAdapter(tasksAdapter);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        initHeaderAndFooter(tasksAdapter);
+        initHeaderAndFooter(baseAdapter);
         initLoadMore();
 
     }
@@ -128,59 +118,6 @@ public class MainActivity extends FragmentActivity {
                 }
             }
         });
-    }
-
-
-
-    private static class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
-
-        private List<String> mTasks ;
-
-        public TasksAdapter(List<String> tasks){
-            mTasks = tasks;
-        }
-
-        public void refreshList(List<String> tasks){
-            mTasks = tasks;
-            notifyDataSetChanged();
-        }
-
-        @Override
-        public TasksAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.app_search_item, parent, false);
-            // 实例化viewholder
-            TasksAdapter.ViewHolder viewHolder = new TasksAdapter.ViewHolder(v);
-            v.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.d("TasksAdapter", "Item click");
-                }
-            });
-            return viewHolder;        }
-
-        @Override
-        public void onBindViewHolder(TasksAdapter.ViewHolder holder, final int position) {
-            holder.mButton.setText(mTasks.get(position));
-        }
-
-        @Override
-        public int getItemCount() {
-            return mTasks == null ? 0 : mTasks.size();
-        }
-
-        public static class ViewHolder extends RecyclerView.ViewHolder {
-
-
-            Button mButton;
-
-            public ViewHolder(View itemView) {
-                super(itemView);
-                mButton = (Button)itemView.findViewById(R.id.button_view);
-            }
-        }
-
-
-
     }
 
 }

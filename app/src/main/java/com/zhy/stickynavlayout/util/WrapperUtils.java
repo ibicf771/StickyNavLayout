@@ -1,4 +1,4 @@
-package com.zhy.stickynavlayout.view;
+package com.zhy.stickynavlayout.util;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;

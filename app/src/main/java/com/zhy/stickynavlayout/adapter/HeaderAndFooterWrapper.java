@@ -1,16 +1,15 @@
-package com.zhy.stickynavlayout.view;
+package com.zhy.stickynavlayout.adapter;
 
-import android.content.Context;
 import android.support.v4.util.SparseArrayCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.zhy.stickynavlayout.R;
+import com.zhy.stickynavlayout.view.ViewHolder;
+import com.zhy.stickynavlayout.util.WrapperUtils;
 
 
 /**
