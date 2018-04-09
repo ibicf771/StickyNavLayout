@@ -120,6 +120,11 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
         return statusBarHeight;
     }
 
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        StickyViewHelper.onDestory();
+    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {

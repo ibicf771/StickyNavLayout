@@ -57,6 +57,10 @@ public class StickyViewHelper {
         return instance;
     }
 
+    public static void onDestory(){
+        instance = null;
+    }
+
     private StickyViewHelper(StickyNavLayout stickyNavLayout){
         Log.d("StickyViewHelper", "StickyViewHelper create");
 
