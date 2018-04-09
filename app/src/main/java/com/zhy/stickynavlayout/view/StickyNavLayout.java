@@ -6,9 +6,12 @@ import android.support.v4.view.NestedScrollingParentHelper;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.OverScroller;
@@ -16,6 +19,9 @@ import android.widget.OverScroller;
 import com.zhy.stickynavlayout.R;
 
 
+/**
+ * 布局中StickyNavLayout必须铺满整个屏幕，既heigth必须为match
+ */
 public class StickyNavLayout extends LinearLayout implements android.support.v4.view.NestedScrollingParent {
 
     private NestedScrollingParentHelper parentHelper = new NestedScrollingParentHelper(this);
@@ -56,53 +62,90 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
+
         mTop = findViewById(R.id.id_stickynavlayout_topview);
         mRecyclerView = (RecyclerView) findViewById(R.id.id_stickynavlayout_innerscrollview);
-//        final HeaderAndFooterWrapper headerAndFooterWrapper = (HeaderAndFooterWrapper)mRecyclerView.getAdapter();
-//
-//        mHandler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//                setOnScrollChangeListener(new OnScrollChangeListener() {
-//                    @Override
-//                    public void onScrollChange(View view, int i, int i1, int i2, int i3)
-//                    {
-//                        Log.d("StickyNavLayout", "mTopViewHeight:" + mTopViewHeight);
-//                        Log.d("StickyNavLayout", "getScaleY():" + getScaleY());
-//                        Log.d("StickyNavLayout", "StickyNavLayout i:" + i + " i1:" + i1);
-//                        if(i1 < 200){
-//                            if(headerAndFooterWrapper.getHeadersCount() == 0){
-//                                Button t1 = new Button(mContext);
-//                                t1.setText("Header 1");
-//                                headerAndFooterWrapper.addHeaderView(t1);
-//                            }
-//                        }else {
-//                            if(headerAndFooterWrapper.getHeadersCount() > 0){
-//                                headerAndFooterWrapper.removeAllHeaderView();
-//                            }
-//                        }
-//                    }
-//                });
-//            }
-//        }, 1000);
+
+        setTopViewHeight();
     }
 
-    @Override
-    protected void onOverScrolled(int scrollX, int scrollY, boolean clampedX, boolean clampedY) {
-        super.onOverScrolled(scrollX, scrollY, clampedX, clampedY);
+
+    /**
+     * 设置recyclerView上面控件的高度，也就是recyclerView的初始高度
+     */
+    private void setTopViewHeight(){
+        ViewGroup.LayoutParams layoutParamsTop = mTop.getLayoutParams();
+        layoutParamsTop.height = getDisplayHeiget() - getStatusBarHeight() - getFirstItemHeight();
+        mTop.setLayoutParams(layoutParamsTop);
     }
 
-    private Handler mHandler = new Handler();
+    /**
+     * 获取recyclerView列表header的高度
+     * @return
+     */
+    private int getFirstItemHeight(){
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.for_more_search_result_item, null);
+
+        int w = View.MeasureSpec.makeMeasureSpec(0,
+                View.MeasureSpec.UNSPECIFIED);
+        int h = View.MeasureSpec.makeMeasureSpec(0,
+                View.MeasureSpec.UNSPECIFIED);
+        view.measure(w, h);
+        return view.getMeasuredHeight();
+    }
+
+    /**
+     * 获取屏幕的高度
+     * @return
+     */
+    private int getDisplayHeiget(){
+        WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics dm = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(dm);
+        return dm.heightPixels;       // 屏幕高度（像素）
+    }
+
+    /**
+     * 获取状态栏的高度
+     * @return
+     */
+    private int getStatusBarHeight(){
+        int statusBarHeight = -1;
+        //获取status_bar_height资源的ID
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            //根据资源ID获取响应的尺寸值
+            statusBarHeight = getResources().getDimensionPixelSize(resourceId);
+        }
+        return statusBarHeight;
+    }
+
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         mTopViewHeight = mTop.getMeasuredHeight();
+
         ViewGroup.LayoutParams layoutParams = mRecyclerView.getLayoutParams();
         layoutParams.height = getMeasuredHeight() - getTopActionViewHeight();
         mRecyclerView.setLayoutParams(layoutParams);
+
         mStickyViewHelper = new StickyViewHelper(this);
+
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.for_more_search_result_item, null);
+
+        int w = View.MeasureSpec.makeMeasureSpec(0,
+                View.MeasureSpec.UNSPECIFIED);
+        int h = View.MeasureSpec.makeMeasureSpec(0,
+                View.MeasureSpec.UNSPECIFIED);
+        view.measure(w, h);
+        int height = view.getMeasuredHeight();
+
+        Log.d("StickyNavLayout", "view height:" + height
+                + " getMeasuredHeight() " + getMeasuredHeight()
+                + " mTop.getMeasuredHeight() " + mTop.getMeasuredHeight()
+                + " gmTopViewHeight " + mTopViewHeight);
+
     }
 
     private int[] mRecyclerViewLocation = new int[2];
@@ -200,7 +243,6 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
     public boolean onNestedPreFling(View target, float velocityX, float velocityY) {
         Log.d("StickyNavLayout", "onNestedPreFling velocityY:" + velocityY);
         if (getScrollY() < mTopViewHeight -  getTopActionViewHeight()) {
-//            mStickyViewHelper.startFling((int)velocityY);
             mFlingSpeed = (int)velocityY;
             return true;
         } else {
