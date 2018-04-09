@@ -1,0 +1,17 @@
+<com.zhy.stickynavlayout.view.StickyNavLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sticky_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@id/id_stickynavlayout_topview"
+        android:layout_width="match_parent"
+        android:layout_height="600dp">
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@id/id_stickynavlayout_innerscrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+    </android.support.v7.widget.RecyclerView>
+</com.zhy.stickynavlayout.view.StickyNavLayout>
