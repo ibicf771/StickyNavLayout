@@ -1,22 +1,18 @@
 package com.zhy.stickynavlayout.view;
 
 import android.content.Context;
-import android.os.Handler;
 import android.support.v4.view.NestedScrollingParentHelper;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.OverScroller;
 
 import com.zhy.stickynavlayout.R;
+import com.zhy.stickynavlayout.util.DisplayUtil;
 
 
 /**
@@ -75,55 +71,10 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
      */
     private void setTopViewHeight(){
         ViewGroup.LayoutParams layoutParamsTop = mTop.getLayoutParams();
-        layoutParamsTop.height = getDisplayHeiget() - getStatusBarHeight() - getFirstItemHeight();
+        layoutParamsTop.height = DisplayUtil.getDisplayHeiget(mContext)
+                - DisplayUtil.getStatusBarHeight(mContext)
+                - DisplayUtil.getViewHeight(mContext, R.layout.for_more_search_result_item);
         mTop.setLayoutParams(layoutParamsTop);
-    }
-
-    /**
-     * 获取recyclerView列表header的高度
-     * @return
-     */
-    private int getFirstItemHeight(){
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.for_more_search_result_item, null);
-
-        int w = View.MeasureSpec.makeMeasureSpec(0,
-                View.MeasureSpec.UNSPECIFIED);
-        int h = View.MeasureSpec.makeMeasureSpec(0,
-                View.MeasureSpec.UNSPECIFIED);
-        view.measure(w, h);
-        return view.getMeasuredHeight();
-    }
-
-    /**
-     * 获取屏幕的高度
-     * @return
-     */
-    private int getDisplayHeiget(){
-        WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
-        DisplayMetrics dm = new DisplayMetrics();
-        wm.getDefaultDisplay().getMetrics(dm);
-        return dm.heightPixels;       // 屏幕高度（像素）
-    }
-
-    /**
-     * 获取状态栏的高度
-     * @return
-     */
-    private int getStatusBarHeight(){
-        int statusBarHeight = -1;
-        //获取status_bar_height资源的ID
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            //根据资源ID获取响应的尺寸值
-            statusBarHeight = getResources().getDimensionPixelSize(resourceId);
-        }
-        return statusBarHeight;
-    }
-
-    @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        StickyViewHelper.onDestory();
     }
 
     @Override
@@ -136,6 +87,12 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
         mRecyclerView.setLayoutParams(layoutParams);
 
         mStickyViewHelper =  StickyViewHelper.getInstance(this);
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        StickyViewHelper.onDestory();
     }
 
     private int[] mRecyclerViewLocation = new int[2];
@@ -210,8 +167,8 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
     @Override
     public void onNestedPreScroll(View target, int dx, int dy, int[] consumed) {
         boolean hiddenTop = dy > 0 && getScrollY() < mTopViewHeight - getTopActionViewHeight();
-        boolean showTop = dy < 0 && getScrollY() >=  getTopActionViewHeight() && !ViewCompat.canScrollVertically(target, -1);
-
+        boolean showTop = dy < 0 && getScrollY() >=  0 && !ViewCompat.canScrollVertically(target, -1);
+        Log.d("StickyNavLayout", "onNestedPreScroll getScaleY():" + getScrollY() + " hiddenTop " + hiddenTop + " showTop " + showTop);
         if (hiddenTop || showTop) {
             scrollBy(0, dy);
             consumed[1] = dy;

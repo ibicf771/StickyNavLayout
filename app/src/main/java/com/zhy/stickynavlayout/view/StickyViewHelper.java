@@ -5,8 +5,6 @@ import android.util.Log;
 import android.view.ViewTreeObserver;
 import android.widget.OverScroller;
 
-import com.zhy.stickynavlayout.R;
-
 /**
  * Created by yangsimin on 2018/4/6.
  * StickyNavLayout的辅助类，用于滑动动画的处理
