@@ -133,23 +133,31 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
 
     @Override
     public void computeScroll() {
-        if (mScroller.computeScrollOffset()) {
-            scrollTo(0, mScroller.getCurrY());
-            invalidate();
+        if(!isNestedScrolling){
+            if (mScroller.computeScrollOffset()) {
+                scrollTo(0, mScroller.getCurrY());
+                invalidate();
+            }
         }
     }
 
-
+    /**
+     * 手势操作的时候暂停滑动动画，避免控件抖动
+     */
+    private boolean isNestedScrolling;
 
     //实现NestedScrollParent接口-------------------------------------------------------------------------
 
     @Override
     public boolean onStartNestedScroll(View child, View target, int nestedScrollAxes) {
+        Log.d("StickyNavLayout", "onStartNestedScroll");
+        isNestedScrolling = true;
         return true;
     }
 
     @Override
     public void onNestedScrollAccepted(View child, View target, int nestedScrollAxes) {
+        Log.d("StickyNavLayout", "onNestedScrollAccepted");
         parentHelper.onNestedScrollAccepted(child, target, nestedScrollAxes);
     }
 
@@ -158,6 +166,7 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
         Log.d("StickyNavLayout", "onStopNestedScroll");
         mStickyViewHelper.startStickAnimation();
         mFlingSpeed = 0;
+        isNestedScrolling = false;
     }
 
     @Override
