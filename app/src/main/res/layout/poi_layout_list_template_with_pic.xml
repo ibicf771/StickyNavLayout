@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/poi_item_main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/v4_board_list_content_bg_selector"
+    android:clickable="true"
+    android:descendantFocusability="afterDescendants"
+    android:gravity="top">
+
+
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="12dp"
+        android:gravity="center_vertical"
+        android:paddingTop="3dp">
+
+        <ImageView
+            android:id="@+id/iv_poi_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@null"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/poi_list_item_img_default"
+            android:visibility="visible" />
+
+
+        <RelativeLayout
+            android:id="@+id/poi_title_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="8dp">
+
+            <TextView
+                android:id="@+id/tv_poi_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="吉野家"
+                android:textColor="@color/colorDark"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tv_poi_item_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_below="@id/tv_poi_item_name"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="地址"
+                android:textColor="@color/colorGray"
+                android:textSize="13dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/poi_ratingbar_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/poi_title_ll"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:minHeight="18dp"
+            android:paddingLeft="8dp"
+            android:visibility="visible">
+
+            <RatingBar
+                android:id="@+id/rating_bar"
+                style="@style/RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:max="50"
+                android:numStars="5"
+                android:progress="35"
+                android:stepSize="0.1"
+
+                />
+
+            <TextView
+                android:id="@+id/no_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="12dp"
+                android:layout_toRightOf="@id/rating_bar"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:text="暂无评分"
+                android:textColor="@color/text_dark"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/tv_poi_item_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/no_rating"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="1312公里"
+                android:textColor="@color/text_dark"
+                android:textSize="13dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/label_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/poi_ratingbar_ll"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:paddingBottom="1dp"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:background="@drawable/textview_border"
+                android:text="人间美味"
+                android:textColor="@color/colorGray"
+                android:textSize="13dp"
+                android:layout_marginRight="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:paddingBottom="1dp"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:background="@drawable/textview_border"
+                android:text="无敌好吃"
+                android:textColor="@color/colorGray"
+                android:textSize="13dp"
+                android:layout_marginRight="12dp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -82,7 +82,7 @@ public class AdapterWrapperHelper{
                 Log.d("MainActivity1", "getViewTreeObserver OnScrollChangedListener ");
                 int scrollY = mStickyNavLayout.getMScrollY();
                 Log.d("MainActivity1", "mStickyNavLayout.getRecyclerViewY():" + scrollY);
-                if(scrollY < 20){
+                if(scrollY < 10){
                     if(mHeaderAndFooterWrapper.getHeadersCount() == 0) {
                         mHeaderAndFooterWrapper.addHeaderView(R.layout.for_more_search_result_item);
                         mLoadMoreWrapper.notifyDataSetChanged();

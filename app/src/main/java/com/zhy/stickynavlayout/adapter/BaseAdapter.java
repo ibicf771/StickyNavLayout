@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.zhy.stickynavlayout.R;
 
@@ -30,7 +31,7 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {
 
     @Override
     public BaseAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.app_search_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.poi_layout_list_template_with_pic, parent, false);
         // 实例化viewholder
         BaseAdapter.ViewHolder viewHolder = new BaseAdapter.ViewHolder(v);
         v.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +45,7 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(BaseAdapter.ViewHolder holder, final int position) {
-        holder.mButton.setText(mTasks.get(position));
+        holder.mView.setText(mTasks.get(position));
     }
 
     @Override
@@ -55,11 +56,11 @@ public class BaseAdapter extends RecyclerView.Adapter<BaseAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
 
-        Button mButton;
+        TextView mView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            mButton = (Button) itemView.findViewById(R.id.button_view);
+            mView = (TextView) itemView.findViewById(R.id.tv_poi_item_name);
         }
     }
 }

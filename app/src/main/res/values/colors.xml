@@ -3,4 +3,781 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorDark">#000000</color>
+    <color name="colorGray">#888888</color>
+    <color name="colorLightGray">#FFcccccc</color>
+    <color name="colorDarkGray">#FFaaaaaa</color>
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorLightWhite">#FFF5F5F5</color>
+    <color name="colorOrange">#FFBA55</color>
+
+    <color name="divider">#cccccc</color>
+
+    <color name="image_button_press">#33ffffff</color>
+    <color name="top_category_bar_background">#ffeeeeee</color>
+
+    <color name="activity_bg_color">#fafafa</color>
+    <color name="text_white">#ffffff</color>
+    <color name="text_menu_color">#ffffff</color>
+    <color name="text_black">#222222</color>
+    <color name="text_dark">#444444</color>
+    <color name="text_gray">#888888</color>
+    <color name="text_red">#FF0000</color>
+    <color name="text_green">#006D68</color>
+
+    <color name="text_bg_normal">#33000000</color>
+    <color name="text_bg_select">#88538fe9</color>
+
+    <color name="login_background">#006D68</color>
+
+    <color name="background_color">#ffefefef</color>
+    <color name="solid_white">#ffffffff</color>
+
+    <color name="search_result_list_add_point_text">#757575</color>
+    <color name="search_result_list_add_point_btn">#0091ff</color>
+
+
+    <!-- 不可点击（暗灰色） -->
+    <color name="font_ca0">#a0a0a0</color>
+    <!-- 文字-高亮文字(蓝色) -->
+    <color name="font_cb">#0091ff</color>
+    <!-- 文字-蓝色高亮不可用的颜色 -->
+    <color name="font_cb_disable">#dcdcdc</color>
+    <!-- 文字-高亮文字（蓝色）的点击态的颜色-->
+    <color name="font_cb_pressed">#7fc8ff</color>
+    <!-- 文字-按钮颜色，按钮点击变深 -->
+    <color name="font_cb_pressed_darker">#0f68af</color>
+    <!-- 文字-按钮颜色，按钮不可点击 -->
+    <color name="font_cb_disabled">#87bdfb</color>
+    <!-- 文字-标题文字（纯黑色） -->
+    <color name="font_c00">#000000</color>
+    <!-- 文字-热词文字（橘黄色） -->
+    <color name="font_co">#f6712a</color>
+    <!-- 文字-描述文字（淡黑色） -->
+    <color name="font_c33">#333333</color>
+    <!-- 文字-价格文字（红色） -->
+    <color name="font_cr">#ff4546</color>
+    <color name="font_ff6732">#ff6732</color>
+    <!-- 文字-辅助文字（灰黑色） -->
+    <color name="font_c66">#666666</color>
+    <!--搜索结果推荐词（红色）-->
+    <color name="font_cf6">#f67129</color>
+    <!-- 文字-标签文字（绿色） -->
+    <color name="font_cg">#31c464</color>
+    <!-- 文字-附属文字（暗灰色） -->
+    <color name="font_c99">#999999</color>
+    <!-- 文字-有色按钮文字（白色） -->
+    <color name="font_cff">#ffffff</color>
+    <color name="font_cfd">#fffffd</color>
+    <!-- 文字-不可用文字（灰色） -->
+    <color name="font_cad">#adadad</color>
+    <!-- 文字-不可点击-蓝按钮上的文字颜色 -->
+    <color name="font_cdb">#b5dbff</color>
+    <!-- 文字-不可点击-红按钮上的文字颜色-->
+    <color name="font_cdr">#ffcbcc</color>
+    <!-- 文字-不可点击-灰色按钮上的文字颜色 -->
+    <color name="font_cdg">#e2e2e2</color>
+    <!-- 文字-不可点击-白按钮上的文字颜色（蓝色） -->
+    <color name="font_cbd">#94c7f9</color>
+    <!-- 文字-不可点击-白按钮上的文字颜色（红色） -->
+    <color name="font_crd">#fc8d8f</color>
+    <!-- 背景-全局背景 -->
+    <color name="bg_a">#efefef</color>
+    <!-- 背景-导航条 -->
+    <color name="bg_b">#f8f8f8</color>
+    <!-- 背景-列表、输入框-->
+    <color name="bg_c">#ffffff</color>
+    <!-- 背景-附属信息框背景 -->
+    <color name="bg_d">#fbfbfb</color>
+    <!-- 背景-点击 -->
+    <color name="bg_e">#e5e5e5</color>
+    <!-- 背景-选中 -->
+    <color name="bg_f">#eeeeee</color>
+    <!-- 边框，边线-导航条边线 -->
+    <color name="bg_g">#979797</color>
+    <!-- 边框，边线-卡片边线 -->
+    <color name="bg_h">#cbcbcb</color>
+    <!-- 边框，边线-输入框、按钮边线 -->
+    <color name="bg_i">#bbbbbb</color>
+    <!-- 边框，边线-列表分割线 -->
+    <color name="bg_j">#dddddd</color>
+    <!-- 边框，边线-附属信息框边框-->
+    <color name="bg_k">#ededed</color>
+
+    <!-- 边框，边线-列表分割线 -->
+    <color name="bg_cb">#cbcbcb</color>
+    <!-- 一种背景色 -->
+    <color name="bg_f5">#f5f5f5</color>
+    <!-- 一种背景色 -->
+    <color name="bg_f7">#f7f7f7</color>
+
+    <!-- 一种分割线的颜色 -->
+    <color name="bg_ca">#cacaca</color>
+
+    <!-- v3 -->
+    <color name="v3_font_white">#FFFFFF</color>
+    <color name="v3_font_black">#000000</color>
+    <color name="v3_font_gray2">#999999</color>
+    <color name="v3_font_blue">#0099CC</color>
+    <color name="transparent_background">#80000000</color>
+    <color name="font_black">#000000</color>
+    <color name="splash_day">#ffffff</color>
+
+    <drawable name="lit_transparent_background">#50000000</drawable>
+    <drawable name="transparent_background">#90000000</drawable>
+    <drawable name="screen_background_gray">#242424</drawable>
+    <drawable name="bg_gray">#f0f0f0</drawable>
+    <drawable name="white_bg">#ffffff</drawable>
+    <drawable name="mbox_btns_layout_divider">#e6e6e6</drawable>
+    <drawable name="car_tab_selected">#ffffff</drawable>
+    <drawable name="car_tab_unselected">#efefef</drawable>
+    <drawable name="car_tab_line">#efefef</drawable>
+    <color name="car_tab_text_black">#3b3b3b</color>
+    <color name="car_tab_text_litblack">#999999</color>
+    <color name="car_tab_text_blue">#0091ff</color>
+    <color name="car_tab_text_gray">#a0a0a0</color>
+    <color name="primary_text_light">#FFFFFF</color>
+
+    <!-- new -->
+    <color name="gray">#FF888888</color>
+
+    <color name="gray_c">#CCCCCC</color>
+
+    <!-- 普通标题 -->
+    <color name="font_normal_title_text_color">#2B2B2B</color>
+    <!-- 普通标题反白 -->
+    <color name="font_normal_title_text_white_color">#FFFFFF</color>
+    <!-- 小号备注文字 -->
+    <color name="font_small_comment_text_black_color">#494949</color>
+    <color name="common_white_btn_text_normal">#007aff</color>
+    <color name="common_white_btn_text_pressed">#0057b6</color>
+    <color name="common_white_btn_text_disable">#70a6fd</color>
+    <color name="poidetail_dlg_right_btn_text_normal">#0091ff</color>
+    <color name="poidetail_dlg_right_btn_text_pressed">#0091ff</color>
+    <color name="poidetail_dlg_right_btn_text_disable">#9ebffc</color>
+    <!-- 灰 -->
+    <color name="gray_color">#A7B0BB</color>
+    <color name="divider_white">#ADB9C9</color>
+    <color name="ssoblue">#3b4755</color>
+    <color name="button_text">#ff000000</color>
+    <color name="button_text_disabled">#ffc0c0c0</color>
+    <color name="v3_font_color_6">#666666</color>
+    <color name="v3_font_color_3">#333333</color>
+    <!-- diandao -->
+    <color name="listone">#F3F3F3</color>
+    <color name="solid_black">#ff000000</color>
+
+    <!-- v4 -->
+    <color name="title">#000000</color>
+    <!-- 二级标题 -->
+    <color name="black_title">#333333</color>
+    <!-- 大标题 -->
+    <color name="content_down">#777571</color>
+    <!-- 搜索结果详细列表的小字 -->
+    <color name="content_up">#000000</color>
+    <!-- 黑色背景标题 -->
+    <color name="title_on_black">#bfbfbf</color>
+
+    <!-- 一框搜 结果列表文字 -->
+    <color name="search_text_color">#333333</color>
+
+    <!-- 切换城市深色title背景 的字体颜色 -->
+    <color name="frame_bg">#f0f3f4</color>
+    <!-- 背景色 -->
+    <color name="frame_line">#b6c5c8</color>
+    <!-- 分隔线 -->
+    <color name="frame_blank">#e7eaec</color>
+    <color name="v4_btn_layout_bg">#fafafa</color>
+    <color name="storage_div">#a6a6a6</color>
+
+    <drawable name="transparent">#00000000</drawable>
+    <drawable name="dark_transparent">#B0000000</drawable>
+    <drawable name="suggestion_history_press_bg">#D9D9D9</drawable>
+
+    <color name="listview_divider">#aaaaaa</color>
+    <color name="divider_blue">#4c90f9</color>
+    <color name="divider_color">#c5c5c5</color>
+
+    <drawable name="listview_item_bg">#ffffff</drawable>
+    <color name="v4_list_item_bg_hl">#edf4fe</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- 切换城市离线地图 -->
+    <color name="list_large_txt_color">#3b3b3b</color>
+    <color name="list_small_txt_color">#898989</color>
+    <color name="bottom_but_background_color">#3e3e3e</color>
+
+    <color name="map_poi_name">#43545e</color>
+    <color name="map_poi_name_hl">#0061c1</color>
+
+    <!-- v322 -->
+    <!-- Jolene UI 颜色归总 -->
+    <color name="black">#494949</color>
+    <color name="black_3">#333333</color>
+    <!-- 大标题黑 输入框用户文字 -->
+    <color name="black_lite">#3b3b3b</color>
+    <!-- 列表大字 深灰 -->
+    <color name="title_black">#494949</color>
+    <!-- 二级标题 路线tip文字 -->
+    <color name="gary_assist">#b5b6b7</color>
+    <!-- 公交 时间 -->
+    <color name="gary_btn">#7b8184</color>
+    <!-- 列表页btn文字色 -->
+    <color name="gary_">#707070</color>
+    <!-- 公交 时间 -->
+    <color name="gary">#898989</color>
+    <!-- 输入框默认文字 列表小字 黑色背景中显暗的 筛选灰字 btn高亮文字色 -->
+    <color name="gary_heavy">#adadad</color>
+    <!-- ID界面的灰色文字色 -->
+    <color name="gray_lite">#c5c5c5</color>
+    <!-- 分隔线   抽屉文字 导航街道名 -->
+    <color name="gray_disabled">#d2d2d2</color>
+    <!-- 功能不可用disable文字 -->
+    <color name="gray_white">#e8e8e8</color>
+    <!-- 亮灰 导航底部文字 -->
+
+    <color name="gary_tab">#f0f0f0</color>
+    <!-- 灰 筛选btn背景色 -->
+    <color name="gary_frame">#eff1f3</color>
+    <color name="gray_frame">#eff1f3</color>
+    <!-- 浅灰 背景色 -->
+    <color name="white">#ffffff</color>
+    <!-- 全白 表格颜色 -->
+    <color name="white_frame">#edf4fe</color>
+    <!-- 高亮色 -->
+    <color name="splashy_white">#fafbfc</color>
+
+    <color name="nearbyOrange">#ff9227</color>
+    <color name="blue">#4c90f9</color>
+    <color name="blue_offline_download">#007aff</color>
+    <color name="offline_down_size">#777777</color>
+    <color name="offline_down_title">#909090</color>
+    <color name="offline_head_font">#FFFFFF</color>
+    <!-- 蓝色 -->
+    <color name="red">#d34e3b</color>
+    <color name="f850_default_blue">#0079ff</color>
+    <!-- 红 -->
+
+    <color name="red_number">#e44853</color>
+    <color name="red_del">#ff4546</color>
+    <!-- 路线规划里数字红 光柱红 -->
+    <color name="green">#35bc00</color>
+    <color name="tf_bg_green">#31c464</color>
+    <color name="tf_bg_green_dark">#2d7245</color>
+    <color name="tf_tv_green_dark">#71d092</color>
+    <color name="tf_pic_bg">#404d5b</color>
+
+    <!-- 光柱灰 -->
+    <color name="bluegary">#5771a3</color>
+
+    <!-- 搜索历史列表 -->
+    <drawable name="listview_his_item_pressed_bg">#555555</drawable>
+
+    <color name="poi_deal">#a56226</color>
+    <!-- POI优惠描述文字 -->
+
+    <color name="v4_font_color_lite_black">#666666</color>
+    <color name="v4_font_color_italic">#b9b9b9</color>
+    <color name="category_search_bg">#77808a</color>
+    <color name="category_search_hotitem_hottext">#ff6000</color>
+
+    <!-- share交通互助底部 -->
+    <color name="tmc_udc">#494949</color>
+    <color name="tmc_content">#575757</color>
+    <color name="tmc_locabar">#898989</color>
+    <color name="add_navi_des_color">#555555</color>
+    <color name="criticism_color">#c11919</color>
+    <color name="praise_color">#0179fd</color>
+    <color name="traffic_report_content">#494949</color>
+    <color name="traffic_alarm_btn_text">#dcdcdc</color>
+
+    <!-- 交通信息 -->
+    <color name="traffic_list_status_red">#d23636</color>
+    <color name="traffic_list_status_pink">#ff4546</color>
+    <color name="traffic_list_status_green">#31c646</color>
+
+    <!-- 团购适用门店电话旁边的分割线 -->
+    <drawable name="divider_line">#ebebed</drawable>
+
+    <!-- 左抽屉Tab背景色 -->
+    <color name="drawer_left_tab_bg">#595a5a</color>
+
+    <!-- 淘宝字体颜色 -->
+    <color name="taobao_black">#333333</color>
+
+    <!-- 下载语音包dialog -->
+    <drawable name="progress_bar_color">#619dfa</drawable>
+    <drawable name="progress_bar_blackr">#efefef</drawable>
+
+    <color name="v5_navi_set_text_color">#b9b9b9</color>
+    <color name="v6_color_red">#fc3e39</color>
+    <color name="v6_color_gray">#818181</color>
+
+    <color name="v6_navi_set_divider_line">#e0e0e0</color>
+
+    <!-- 发现 -->
+    <drawable name="discover_bottom_btn_pressed">#202020</drawable>
+
+    <color name="discover_tag_text_normal">#333333</color>
+    <color name="discover_tag_text_selected">#f05526</color>
+    <color name="discover_refresh_text_color">#a7a8aa</color>
+    <color name="v6_orange">#FFA500</color>
+    <color name="v6_red">#d34e3b</color>
+    <color name="v6_navi_average_speed_color">#bebebe</color>
+    <!--
+   <color name="umeng_socialize_text_title">#464f61</color>
+   <color name="umeng_socialize_text_time">#999999</color>
+   <color name="umeng_socialize_divider">#E6E6E6</color>
+
+    -->
+
+
+    <!-- 电影相关 -->
+    <color name="movie_list_bg">#F0F1F3</color>
+    <color name="condition_press">#ffffff</color>
+    <color name="condition_unpress">#555555</color>
+    <!-- tapTextVie_Color -->
+    <color name="movie_tap_text_press">#2584c5</color>
+    <color name="movie_tap_text">#ffffff</color>
+    <!-- starTextView_Color -->
+    <color name="movie_star_text">#f51c00</color>
+
+    <!-- 魔盒计划 -->
+    <color name="mbox_text_name_color">#333333</color>
+    <color name="mbox_text_addr_color">#888888</color>
+    <color name="mbox_text_child_title_color">#555555</color>
+    <color name="mbox_text_distance_color">#aaaaaa</color>
+    <color name="mbox_text_btn_nor_color">#555555</color>
+    <color name="mbox_text_source_color">#999999</color>
+
+    <!-- 酒店相关 -->
+    <color name="selected_index_color">#3399FF</color>
+    <color name="order_hotel_my_location">#747a7d</color>
+    <color name="order_hotel_text_color">#494949</color>
+    <color name="order_hotel_lable_color">#747a7d</color>
+    <color name="order_hotel_search_btn_color">#4c90f9</color>
+    <color name="order_hotel_keyword_text_color">#b9b9b9</color>
+    <color name="order_hotel_choose_city_group_text_color">#646464</color>
+    <color name="order_hotel_choose_city_child_text_color">#333333</color>
+    <color name="translucence">#aa000000</color>
+    <color name="order_hotel_bg_normal">#ffffff</color>
+    <color name="order_hotel_bg_press">#e5e5e5</color>
+    <color name="order_hotel_quick_search_highlight">#f47136</color>
+    <color name="order_hotel_quick_search">#666666</color>
+    <color name="order_hotel_bg">#eff1f3</color>
+    <color name="order_hotel_text_dark">#000000</color>
+    <color name="order_hotel_text_gray">#999999</color>
+    <color name="order_hotel_dicder">#cbcbcb</color>
+
+    <!-- 团购主页 -->
+    <color name="count_down_time_bg">#77808a</color>
+    <color name="groupbuy_filter_btn_bg">#f8f8f8</color>
+
+    <drawable name="groupbuy_homepage_item_hl">#cccccc</drawable>
+    <drawable name="groupbuy_homepage_item_bg">#ffffff</drawable>
+
+    <!-- 卡券相关 -->
+    <color name="voucher_backgroud">#f0f1f3</color>
+    <color name="voucher_iteam_flag_blue">#007aff</color>
+    <color name="voucher_iteam_flag_red">#fc3e39</color>
+    <color name="voucher_iteam_flag_gray">#a8a8a8</color>
+    <color name="voucher_iteam_flag_orange">#F36E1C</color>
+    <color name="voucher_iteam_flag_red2">#F00000</color>
+    <!-- 支付宝 -->
+    <color name="TextColorBlack">#FF000000</color>
+    <color name="TextColorWhite">#FFFFFFFF</color>
+    <color name="TextColorGray">#FF505050</color>
+    <color name="ToastBgColor">#FF424242</color>
+    <color name="btnColor">#FFFFFF</color>
+    <color name="textColtextColorforItemTitleorforItemTitle">#666666</color>
+    <color name="secondbtntextColor">#FF496ea3</color>
+    <color name="textColorforCheckBox">#FF333333</color>
+    <color name="bgColor">#FFF2F2F2</color>
+    <color name="downLoadTextNomal">#FF3366CC</color>
+    <color name="downLoadTextPressed">#FFFFFFFF</color>
+    <color name="downLoadBackNomal">#FFFFFFFF</color>
+    <color name="downLoadBackFocus">#FF6698E7</color>
+    <color name="downLoadBackPressed">#FF3366CC</color>
+    <color name="dialog_tiltle_blue">#2277BB</color>
+    <color name="alert_bg">#fffcd5</color>
+    <color name="product_title">#818181</color>
+    <color name="bg_blue">#bdd6ec</color>
+    <color name="floor_garl">#727980</color>
+    <color name="floor_bule">#4e92f1</color>
+    <color name="floor_alter_garl">#a3a8ad</color>
+    <color name="floor_alter_bule">#8bb7fb</color>
+    <color name="nearby_recommond_iv_press_color">#b2b2b2</color>
+    <color name="error_reoprt">#ffffa82c</color>
+
+    <!-- 优惠劵 -->
+    <color name="gray_bg">#efefef</color>
+    <color name="past_bg">#cecece</color>
+    <color name="disable_bg">#89ffffff</color>
+    <color name="alert_ok_bg">#9a9a9a</color>
+    <!-- 我的页面 -->
+    <color name="prossed_bg">#fff7f8fd</color>
+    <color name="my_order_broder">#cacaca</color>
+    <color name="item_normal_bg">#44000000</color>
+    <color name="item_prossed_bg">#55000000</color>
+    <color name="v6_navi_share_bg">#4196ff</color>
+    <color name="v6_navi_share_divider">#2980ea</color>
+    <color name="v6_navi_share_blue_value">#4c90f9</color>
+    <color name="v6_navi_share_divider_blue_value">#2d71db</color>
+    <color name="v6_navi_share_item_bg">#f3f4f5</color>
+    <color name="v6_navi_share_item_font_bg">#858585</color>
+    <color name="nearby_bg">#eff1f3</color>
+
+    <!-- 进度条背景色 -->
+    <color name="progress_background">#ededed</color>
+    <color name="header_toast">#024ca1</color>
+    <color name="header_toast_bg">#ccebfc</color>
+    <color name="header_toast_line">#abdaf4</color>
+
+    <!-- 不仅页面：全部、热词的颜色及被选中颜色 -->
+    <color name="near_by_text_color">#333333</color>
+    <color name="near_by_text_selector">#4c90f9</color>
+    <color name="car_tag_checked">#007aff</color>
+    <color name="car_tag_unchecked">#28303b</color>
+
+    <!-- 出行中淡蓝色半透明背景 -->
+    <drawable name="transparent_bluebg">#90238bfd</drawable>
+    <drawable name="transparent_whitebg">#DDffffff</drawable>
+    <!-- 报错 -->
+    <color name="error_big_text_color">#333333</color>
+    <color name="error_hint_color">#999999</color>
+
+    <drawable name="error_white_bg">#ffffff</drawable>
+    <drawable name="error_black_bg">#333333</drawable>
+
+    <!-- 外卖地址 -->
+    <color name="address_list_name">#000000</color>
+    <color name="address_list_address">#555555</color>
+    <color name="address_list_edit">#007aff</color>
+    <color name="address_list_delete">#fc3e39</color>
+    <color name="address_edit_tips">#fd7700</color>
+    <color name="orderfood_stoporderfood">#b4b4b8</color>
+    <color name="orderfood_startorderfood">#737373</color>
+    <color name="blue_white">#b8caeb</color>
+    <color name="dark_blue_white">#bfd9ff</color>
+
+    <!-- 搜索公交子类分割线 -->
+    <color name="d_gray">#dddddd</color>
+
+    <!-- 公交搜索方案页颜色值 -->
+    <color name="fromto_bus_main_text_color">#333333</color>
+    <color name="fromto_bus_sub_text_color">#666666</color>
+    <color name="fromto_bus_detail_sub_text_color">#999999</color>
+    <color name="fromto_bus_lastoutage_text_color">#bebebe</color>
+    <color name="fromto_bus_return_text_color">#007aff</color>
+    <color name="fromto_bus_dividing_line">#b4b4b4</color>
+    <color name="fromto_bus_result_item_bg">#e4edf8</color>
+    <color name="fromto_bus_result_item_text_hl">#333333</color>
+    <color name="fromto_bus_result_item_text">#cccccc</color>
+    <color name="fromto_bus_result_item_sub_text">#999999</color>
+    <color name="fromto_bus_detail_left_bg_color">#e2f3ff</color>
+    <color name="fromto_bus_detail_line_background">#cdd6dc</color>
+    <color name="fromto_bus_detail_otherbus_text">#2dabfe</color>
+    <color name="fromto_bus_detail_right_bg_color">#f5f9fc</color>
+    <color name="fromto_bus_realtime_des_text_color">#ff4546</color>
+
+    <color name="route_bus_resultmap_tips_main_color">#363b3e</color>
+    <color name="route_bus_resultmap_tips_des_color">#6f7a80</color>
+
+    <!-- 日期控件 -->
+    <color name="date_btn_background">#737981</color>
+    <color name="circle_background">#f2f2f2</color>
+    <color name="line_background">#cccccc</color>
+    <color name="ampm_text_color">#8c8c8c</color>
+    <color name="done_text_color_normal">#333333</color>
+    <color name="done_text_color_disabled">#CCCCCC</color>
+    <color name="numbers_text_color">#8c8c8c</color>
+    <color name="transparent_black">#7F000000</color>
+    <color name="darker_blue">#0099CC</color>
+    <color name="date_picker_text_normal">#FF999999</color>
+    <color name="calendar_header">#999999</color>
+    <color name="date_picker_view_animator">#f2f2f2</color>
+    <color name="calendar_selected_date_text">#FFD1D2D4</color>
+    <color name="image_default_background">#efefef</color>
+
+    <drawable name="my_useful_address_border">#ffcacaca</drawable>
+
+    <!-- poi_detail_bottom_bar.xml -->
+    <color name="color_funicon_poidetail_bg">#f7f9f9f9</color>
+    <color name="color_funicon_poidetail_corner">#90c3c3c3</color>
+    <color name="color_poi_detail">#0091ff</color>
+    <color name="color_poi_detail_check">#ffa500</color>
+    <color name="color_poi_detail_seperator">#cccdcd</color>
+    <color name="weeenkend_filter_color">#666666</color>
+    <color name="weekend_red_color">#ff3000</color>
+    <color name="poi_detail_bottom_bar_divider_color">#dcdcdc</color>
+    <!-- <color name="voice_dialog_btn_bg_normal">#F7F7F7</color> -->
+    <color name="voice_dialog_btn_bg_pressed">#E3E3E3</color>
+    <!-- 搜周边 -->
+    <color name="nearby_pink">#EF619A</color>
+    <color name="nearby_red">#F94a4a</color>
+    <color name="nearby_emerald">#6ADC48</color>
+    <color name="nearby_light_blue">#3EACFF</color>
+    <color name="nearby_green">#35DC88</color>
+    <color name="nearby_purple">#875CCD</color>
+    <color name="nearby_blue">#5377D5</color>
+    <color name="nearby_orange">#FFA82C</color>
+    <color name="electronic_dog_bg">#404D5B</color>
+    <color name="foot_alert_background">#F8E71C</color>
+    <color name="foot_alert_foreground">#716945</color>
+    <color name="foot_list_seperate_line">#9F9F9F</color>
+    <color name="foot_list_seperate_text">#CBCDCF</color>
+    <color name="foot_list_normal_color">#989898</color>
+    <color name="foot_title_foreground_color">#98C0EE</color>
+
+    <color name="report_error_list_text_color">#999999</color>
+    <color name="report_error_divider_color">#CACACA</color>
+    <color name="report_error_orange_color">#f6712a</color>
+    <color name="report_error_bg_gray_color">#f9f9f9</color>
+
+    <color name="foot_navi_gps_strong">#00E367</color>
+    <color name="foot_navi_gps_weak">#ff4546</color>
+    <color name="foot_navi_gps_no">#CCCCCC</color>
+
+    <drawable name="basemap_location_btn_normal">#00ffffff</drawable>
+    <drawable name="basemap_location_btn_presssed">#44cccccc</drawable>
+    <color name="basemap_location_button_color_black">#333333</color>
+    <color name="basemap_locaiton_button_color_gray">#999999</color>
+    <color name="basemap_location_button_color_blue">#0091ff</color>
+
+    <color name="basemap_gpstip_warn_color">#f6712a</color>
+
+
+    <!--  用户反馈 -->
+    <color name="feedback_list_top_bg">#f8f8f9</color>
+    <color name="feedback_list_red">#ff3b14</color>
+    <color name="feedback_list_oriange">#ff803b</color>
+    <color name="feedback_list_blue">#0091ff</color>
+    <color name="feedback_list_gray">#979797</color>
+    <color name="feedback_line">#dddddd</color>
+    <color name="feedback_list_yellow">#ff9600</color>
+    <color name="feedback_list_red_txt">#ff4f50</color>
+    <color name="feedback_list_btn_bg">#f7f7f7</color>
+    <color name="feedback_list_btn_line">#ededed</color>
+    <color name="feedback_list_f99">#999999</color>
+
+    <!-- 景区语音 -->
+    <color name="spot_download_bg_color">#E5E5E5</color>
+    <color name="spot_download_bottom_text_color">#0F9DFF</color>
+    <color name="spot_download_bottom_blue_bg_color">#009DD9</color>
+    <color name="spot_download_divider">#929297</color>
+    <color name="spot_download_blue">#0091ff</color>
+    <color name="spot_download_title_bg">#ee414146</color>
+    <color name="spot_list_line">#dddfdf</color>
+
+    <color name="splash_skip">#c8c8c8</color>
+    <color name="btn_disable">#c5e2ff</color>
+    <!-- 输入提示 -->
+    <color name="poi_name_color">#333333</color>
+    <color name="poi_address_color">#999999</color>
+    <!-- 历史记录弹出框 -->
+    <color name="collect_color_gray">#adadad</color>
+
+    <!-- 地图点选相关 -->
+    <color name="map_select_list_item_pressed">#f0f6fc</color>
+    <!-- 对话框相关 -->
+    <color name="dialog_title_color">#000000</color>
+    <color name="alert_dialog_content_message_color_gray">#666666</color>
+    <color name="alert_dialog_positive_button_color">#0088ff</color>
+    <!--公交导航底部文字颜色 -->
+    <color name="bus_ride_continue_color">#157efb</color>
+    <!-- 室内外一体化控件文字颜色 -->
+    <color name="floor_widget_value">#4c90f9</color>
+    <color name="floor_widget_items">#616161</color>
+    <!--主需求信息富态展现-->
+    <color name="shadow">#dddddd</color>
+
+    <color name="guide_map_unselected">#666666</color>
+    <color name="guide_map_selected">#0091ff</color>
+    <color name="guide_map_canyin">#e98b38</color>
+    <color name="guide_map_jingdian">#ae8767</color>
+    <color name="guide_map_piao">#c962dd</color>
+    <color name="guide_map_suodao">#3b73ce</color>
+    <color name="guide_map_cesuo">#05b08e</color>
+    <color name="guide_map_cafe">#e98b38</color>
+    <color name="guide_map_shangdian">#9170c6</color>
+    <color name="guide_map_zhusu">#9170c6</color>
+    <color name="guide_map_tingchechang">#3b73ce</color>
+    <color name="guide_map_churukou">#05b08e</color>
+    <color name="guide_map_lundu">#3b73ce</color>
+    <color name="guide_mapguanguangche">#3b73ce</color>
+    <color name="guide_map_atm">#c962dd</color>
+    <color name="guide_map_smoke">#06ab8a</color>
+    <color name="guide_map_notification">#e39800</color>
+    <color name="guide_map_caution">#e39800</color>
+    <color name="city_travel_text_color">#544437</color>
+    <color name="default_fragment_tabitem_pressed_color">#ebebed</color>
+
+    <!-- 图片预览 -->
+    <color name="bg_color_black">#000000</color>
+    <color name="bg_color_transparent">#00000000</color>
+    <color name="text_color_white">#ffffff</color>
+    <color name="image_grid_background">#e6e6e6</color>
+
+    <!-- Search相关-->
+    <color name="cost_time_text_gray_color">#999999</color>
+    <color name="cost_time_text_red_color">#f6712a</color>
+
+    <!-- Background color for light CardView. -->
+    <color name="cardview_light_background">#FFFAFAFA</color>
+    <!-- Background color for dark CardView. -->
+    <color name="cardview_dark_background">#FF202020</color>
+    <!-- Shadow color for the first pixels around CardView. -->
+    <color name="cardview_shadow_start_color">#37000000</color>
+    <!-- Shadow color for the furthest pixels around CardView. -->
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <!--gas price label color-->
+    <color name="search_result_list_item_gas_label_blue_color">#0091ff</color>
+    <color name="search_result_list_item_gas_label_gray_color">#666666</color>
+
+    <color name="traffic_alarm_btn_disable">#4db2ff</color>
+    <color name="traffic_alarm_btn_enable">#ffffff</color>
+
+
+
+    <color name="real_scene_defualt_color">#edf7fe</color>
+    <!--car owner related color-->
+    <color name="car_owner_blue_confirm_button_disabled">#4db2ff</color>
+    <color name="car_owner_blue_confirm_button_enabled">#0090ff</color>
+
+    <!-- dialog-->
+    <color name="commom_background">#f3f3f3</color>
+
+
+    <!-- 步行导航结束界面的计算用时等绘制的圆圈边框颜色 -->
+    <color name="route_foot_navi_end_normal">#d3ecff</color>
+    <color name="route_foot_navi_end_comsume_normal">#ff6990</color>
+    <!-- 通用颜色 -->
+    <color name="route_common_text_color_six">#666666</color>
+
+    <color name="naviset_checkbox_normal">#333333</color>
+    <color name="naviset_checkbox_disable">#d0d0d0</color>
+    <color name="navigation_setting_checkbox_disable">#3fd0d0d0</color>
+    <color name="naviset_multi_choice_confirm_button">#008dff</color>
+
+    <color name="route_star_voice_package_tip_description">#b8bbc1</color>
+
+    <!-- 公交路线详情页 -->
+    <color name="route_bus_result_detail_alert_text">#43a5fe</color>
+    <color name="fromto_bus_detail_screenshot_text_color">#42a5ff</color>
+
+    <!-- 步行导航页面-->
+    <color name="route_foot_navi_top_text_small_color">#888888</color>
+    <color name="route_foot_navi_top_text_big_color">#333333</color>
+
+    <!--实时公交位置页面-->
+    <color name="realtimebus_real_time_position_station_text_color_blue">#0091ff</color>
+
+    <color name="c0091ff">#0091ff</color>
+    <color name="bg_cc3">#c3c3c3</color>
+
+    <!-- 公交路线图面页 -->
+    <color name="bus_result_map_bottom_title_text_check_true">#43a5fe</color>
+
+
+    <!--QuickAutoNaviSettingFragemnt-->
+    <color name="c_91">#0091ff</color>
+    <color name="car_navigation_info_distance_next_road_green">#00ff00</color>
+    <color name="car_navigation_info_title_bg">#393c40</color>
+    <color name="car_navigation_info_splitline">#74797e</color>
+    <color name="car_navigation_info_current_road_name">#999999</color>
+    <color name="car_navigation_info_gpsnum_gray">#98a0b2</color>
+    <color name="car_navigation_info_remain_bg">#33363a</color>
+    <color name="car_navigation_info_remain_fontcolor">#74797e</color>
+
+    <!-- refactor -->
+
+    <!--&lt;!&ndash; 纯色 &ndash;&gt;-->
+    <!--<color name="white">#ffffff</color>-->
+    <!--<color name="white_frame">#edf4fe</color>-->
+
+    <!--<color name="black">#494949</color>-->
+    <!--<color name="black_3">#333333</color>-->
+    <!--<color name="black_lite">#3b3b3b</color>-->
+    <!--<color name="black_title">#333333</color>-->
+
+
+    <!-- 公交换乘提醒半透明提示背景 -->
+    <drawable name="fromto_bus_result_rideremind_guide_transparent_bg">#90000000</drawable>
+
+    <!-- 公交导航 -->
+    <color name="busnavi_get_off_remind_close_view_split">#dddddd</color>
+
+    <!-- 实时公交 -->
+    <color name="realtime_bus_blue">#007aff</color>
+    <color name="realtime_bus_red">#fc3e39</color>
+    <!-- 顶部蓝色背景 -->
+    <color name="route_title_bg">#3d93fd</color>
+    <color name="route_title_bg_s">#317cfa</color>
+
+    <!--驾车导航-->
+
+    <color name="autonavi_text_foreground_color">#00E367</color>
+    <color name="autonavi_title_foreground_color">#9EA2B3</color>
+    <color name="simnavi_text_pause_color">#999fb0</color>
+
+
+    <color name="tab_down_txt_color_off">#797979</color>
+    <color name="tab_down_txt_color_on">#c5c5c5</color>
+    <color name="line_detail_content_bg">#eceefa</color>
+    <color name="v4_navi_text_color">#e8e8e8</color>
+    <color name="v4_font_orange">#ed8b00</color>
+
+
+    <color name="red_offline_download">#ff0000</color>
+    <color name="bus_navi_info_red">#ff573e</color>
+    <color name="busnavi_title_color">#0091ff</color>
+
+    <color name="sticker_message_box">#f7f4a8</color>
+    <color name="realbus_search_header">#f8f8f8</color>
+
+    <!-- 10%透明度 -->
+    <color name="font_white_per10">#19ffffff</color>
+    <!-- 30%透明度 -->
+    <color name="font_white_per30">#4cffffff</color>
+    <!-- 40%透明度 -->
+    <color name="font_white_per40">#66ffffff</color>
+    <!-- 55%透明度 -->
+    <color name="font_white_per55">#8cffffff</color>
+    <!-- 60%透明度 -->
+    <color name="font_white_per60">#99ffffff</color>
+    <!-- 100%透明度 -->
+    <color name="font_white_per100">#00ffffff</color>
+
+    <!-- 30%透明度的白色 -->
+    <color name="line_white_per30">#4cffffff</color>
+    <color name="line_black_per30">#4c000000</color>
+
+    <!--<drawable name="transparent">#00000000</drawable>-->
+    <!--<drawable name="dark_transparent">#B0000000</drawable>-->
+    <!-- 城市列表 -->
+    <color name="side_bar_text">#4A4A4A</color>
+    <color name="super_light_grey">#9f9f9f</color>
+    <color name="action_sheet_gray">#8F8F8F</color>
+
+    <!-- 背景颜色 -->
+    <color name="default_bg_color_a">#efefef</color>
+    <color name="default_bg_color_b">#f8f8f8</color>
+    <color name="default_bg_color_c">#ffffff</color>
+    <color name="default_bg_color_d">#fbfbfb</color>
+    <color name="default_bg_color_e">#e5e5e5</color>
+    <color name="default_bg_color_f">#eeeeee</color>
+
+    <!--<drawable name="transparent">#00000000</drawable>-->
+    <!--<drawable name="dark_transparent">#B0000000</drawable>-->
+
+    <!-- 一种分割线的颜色 -->
+    <color name="bg_ea">#eaeaea</color>
+
+    <color name="line_background1">#eaeaea</color>
+
+    <!-- 一种背景色 -->
+    <color name="bg_f8">#f8f8f8</color>
+
+    <drawable name="bg_f5">#f5f5f5</drawable>
+
 </resources>
