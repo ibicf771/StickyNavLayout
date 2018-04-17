@@ -31,6 +31,11 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
 
     private int mTopActionViewHeight = 100;
 
+    /**
+     * 阻尼因子
+     */
+    private static float DAMPING_FACTOR = 0.7f;
+
     public StickyNavLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
@@ -179,7 +184,7 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
         boolean showTop = dy < 0 && getScrollY() >=  0 && !ViewCompat.canScrollVertically(target, -1);
         Log.d("StickyNavLayout", "onNestedPreScroll getScaleY():" + getScrollY() + " hiddenTop " + hiddenTop + " showTop " + showTop);
         if (hiddenTop || showTop) {
-            scrollBy(0, dy);
+            scrollBy(0, (int)(dy * DAMPING_FACTOR));
             consumed[1] = dy;
         }
     }
