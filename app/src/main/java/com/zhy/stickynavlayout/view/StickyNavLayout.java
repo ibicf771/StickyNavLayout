@@ -24,7 +24,7 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
     private View mTop;
     private int mTopViewHeight;
     private OverScroller mScroller;
-    private RecyclerView mRecyclerView;
+    private View mContentView;
     private Context mContext;
 
     private StickyViewHelper mStickyViewHelper;
@@ -44,8 +44,8 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
         mScroller = new OverScroller(context);
     }
 
-    public RecyclerView getRecyclerView(){
-        return mRecyclerView;
+    public View getContentView(){
+        return mContentView;
     }
 
     public OverScroller getScroller(){
@@ -65,7 +65,7 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
         super.onFinishInflate();
 
         mTop = findViewById(R.id.id_stickynavlayout_topview);
-        mRecyclerView = (RecyclerView) findViewById(R.id.id_stickynavlayout_innerscrollview);
+        mContentView =  findViewById(R.id.id_stickynavlayout_innerscrollview);
 
         setTopViewHeight();
     }
@@ -87,9 +87,9 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         mTopViewHeight = mTop.getMeasuredHeight();
 
-        ViewGroup.LayoutParams layoutParams = mRecyclerView.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = mContentView.getLayoutParams();
         layoutParams.height = getMeasuredHeight() - getTopActionViewHeight();
-        mRecyclerView.setLayoutParams(layoutParams);
+        mContentView.setLayoutParams(layoutParams);
 
         mStickyViewHelper =  StickyViewHelper.getInstance(this);
     }
@@ -102,7 +102,7 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
 
     private int[] mRecyclerViewLocation = new int[2];
     public int getRecyclerViewY(){
-        mRecyclerView.getLocationOnScreen(mRecyclerViewLocation);
+        mContentView.getLocationOnScreen(mRecyclerViewLocation);
         return mRecyclerViewLocation[1];
     }
     private int[] mLayoutLocation = new int[2];
@@ -113,7 +113,7 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
     }
 
     public int getMScrollY(){
-        return getLayoutY() + mRecyclerView.getTop() - getRecyclerViewY();
+        return getLayoutY() + mContentView.getTop() - getRecyclerViewY();
     }
 
     public void startUpScroll(){

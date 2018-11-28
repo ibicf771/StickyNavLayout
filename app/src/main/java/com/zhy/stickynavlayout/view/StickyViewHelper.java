@@ -2,6 +2,7 @@ package com.zhy.stickynavlayout.view;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.OverScroller;
 
@@ -16,7 +17,7 @@ public class StickyViewHelper {
 
     private OverScroller mOverScroller;
 
-    private RecyclerView mRecyclerView;
+    private View mContentView;
 
     private int mTopViewHeight;
 
@@ -64,7 +65,7 @@ public class StickyViewHelper {
 
         mStickyNavLayout = stickyNavLayout;
         mOverScroller = mStickyNavLayout.getScroller();
-        mRecyclerView = mStickyNavLayout.getRecyclerView();
+        mContentView = mStickyNavLayout.getContentView();
         mTopViewHeight = mStickyNavLayout.getTopViewHeight();
         srcollThreshold = getScrollHeight()/10;
         mLastScrollState = getScrollHeight() ;
@@ -94,7 +95,7 @@ public class StickyViewHelper {
     }
 
     private int getRecyclerViewY(){
-        mRecyclerView.getLocationOnScreen(mRecyclerViewLocation);
+        mContentView.getLocationOnScreen(mRecyclerViewLocation);
         return mRecyclerViewLocation[1] - getTopActionViewHeight();
     }
 
@@ -108,7 +109,7 @@ public class StickyViewHelper {
     }
 
     private int getScrollY(){
-        return getLayoutY() + mRecyclerView.getTop() - getRecyclerViewY() - getTopActionViewHeight();
+        return getLayoutY() + mContentView.getTop() - getRecyclerViewY() - getTopActionViewHeight();
     }
 
     private int getScrollHeight(){
