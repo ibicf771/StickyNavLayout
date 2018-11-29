@@ -18,7 +18,7 @@ import com.zhy.stickynavlayout.util.DisplayUtil;
 /**
  * 布局中StickyNavLayout必须铺满整个屏幕，既heigth必须为match
  */
-public class StickyNavLayout extends LinearLayout implements android.support.v4.view.NestedScrollingParent {
+public class StickyNavLayout extends LinearLayout implements android.support.v4.view.NestedScrollingParent{
 
     private NestedScrollingParentHelper parentHelper = new NestedScrollingParentHelper(this);
     private View mTop;
@@ -91,13 +91,14 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
         layoutParams.height = getMeasuredHeight() - getTopActionViewHeight();
         mContentView.setLayoutParams(layoutParams);
 
-        mStickyViewHelper =  StickyViewHelper.getInstance(this);
+        mStickyViewHelper =  new StickyViewHelper(this);
+
     }
 
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        StickyViewHelper.onDestory();
+//        StickyViewHelper.onDestory();
     }
 
     private int[] mRecyclerViewLocation = new int[2];

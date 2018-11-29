@@ -1,11 +1,13 @@
 package com.zhy.stickynavlayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewTreeObserver;
 
 import com.zhy.stickynavlayout.adapter.AdapterWrapperHelper;
@@ -40,6 +42,13 @@ public class MainActivity extends FragmentActivity {
         mRecyclerView = (RecyclerView)findViewById(R.id.id_stickynavlayout_innerscrollview);
         mStickyNavLayout = (StickyNavLayout) findViewById(R.id.sticky_layout);
         mStickyNavLayout.setTopActionViewHeight(200);
+
+        findViewById(R.id.second_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            }
+        });
     }
 
     private void initDatas() {

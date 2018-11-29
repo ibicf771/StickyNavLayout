@@ -35,11 +35,11 @@ public class StickyViewHelper {
     /**
      * recyclerView 滑动停下的三个位置
      */
-    private int RECYCLER_VIEW_SCROLL_LOCATION_TOP;
+    public static int RECYCLER_VIEW_SCROLL_LOCATION_TOP;
 
-    private int RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE;
+    public static int RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE;
 
-    private int RECYCLER_VIEW_SCROLL_LOCATION_BOTTOM;
+    public static int RECYCLER_VIEW_SCROLL_LOCATION_BOTTOM;
 
     /**
      * 回弹速度
@@ -47,20 +47,20 @@ public class StickyViewHelper {
     private static int SPEED = 4000;
 
 
-    private static StickyViewHelper instance;
+//    private static StickyViewHelper instance;
+//
+//    public static StickyViewHelper getInstance(IStickNaviLayout stickyNavLayout) {
+//        if (instance == null) {
+//            instance = new StickyViewHelper(stickyNavLayout);
+//        }
+//        return instance;
+//    }
+//
+//    public static void onDestory(){
+//        instance = null;
+//    }
 
-    public static StickyViewHelper getInstance(StickyNavLayout stickyNavLayout) {
-        if (instance == null) {
-            instance = new StickyViewHelper(stickyNavLayout);
-        }
-        return instance;
-    }
-
-    public static void onDestory(){
-        instance = null;
-    }
-
-    private StickyViewHelper(StickyNavLayout stickyNavLayout){
+    public StickyViewHelper(StickyNavLayout stickyNavLayout){
         Log.d("StickyViewHelper", "StickyViewHelper create");
 
         mStickyNavLayout = stickyNavLayout;
@@ -104,9 +104,9 @@ public class StickyViewHelper {
         return mLayoutLocation[1];
     }
 
-    private int getLayoutHeight(){
-        return mStickyNavLayout.getHeight();
-    }
+//    private int getLayoutHeight(){
+//        return mStickyNavLayout.getHeight();
+//    }
 
     private int getScrollY(){
         return getLayoutY() + mContentView.getTop() - getRecyclerViewY() - getTopActionViewHeight();
