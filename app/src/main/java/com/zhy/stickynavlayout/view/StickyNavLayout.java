@@ -121,6 +121,10 @@ public class StickyNavLayout extends LinearLayout implements android.support.v4.
         mStickyViewHelper.startUpScrollAnimation();
     }
 
+    public void startDownScroll(){
+        mStickyViewHelper.startDownScrollAnimation();
+    }
+
     public void setTopActionViewHeight(int topActionViewHeight){
         mTopActionViewHeight = topActionViewHeight;
     }

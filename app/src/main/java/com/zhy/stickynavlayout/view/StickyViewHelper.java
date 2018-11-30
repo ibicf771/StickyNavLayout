@@ -233,8 +233,22 @@ public class StickyViewHelper {
      */
     public void startUpScrollAnimation(){
         mOverScroller.fling(0, getScrollY(),
-                0, SPEED, 0, 0,
+                0, 200, 0, 0,
                 0, RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE);
+        mStickyNavLayout.invalidate();
+    }
+
+    /**
+     * 从中间获取顶点位置，滑动到底部位置
+     */
+    public void startDownScrollAnimation(){
+        int speed = -SPEED;
+        if(getScrollY() > RECYCLER_VIEW_SCROLL_LOCATION_MIDDLE){
+            speed *= 2;
+        }
+        mOverScroller.fling(0, getScrollY(),
+                0, speed, 0, 0,
+                0, getScrollY());
         mStickyNavLayout.invalidate();
     }
 }
